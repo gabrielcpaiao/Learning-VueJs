@@ -10,7 +10,11 @@
 <body>
     
     <div id="app">
-        {{message}}
+        <h1>
+            {{message}}
+        </h1>
+
+        <button @click="clickMe">Click Me</button>
     </div>
 
     <script>
@@ -19,6 +23,11 @@
                 return {
                     message: "Hello, World!",
                 };
+            },
+            methods: {
+                clickMe() {
+                    console.log('Button Clicked!');
+                },
             },
         });
     
