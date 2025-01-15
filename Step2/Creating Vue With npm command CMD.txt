@@ -1,0 +1,7 @@
+npm create vue@latest vueJsCourseNpm
+
+cd vueJsCourseNpm
+
+npm install
+
+npm run dev
