@@ -1,59 +1,13 @@
-<script setup>
-import { ref } from "vue"; // make reactive
+<script>
+import {defineComponent} from "vue";
+import NavBar from "@/components/NavBar.vue";
 
-const name = ref("Gabriel");
-const status = ref("active");
-const tasks = ref(["Task One", "Task Two", "Task Three", "Task Four"]);
-const newTask = ref("");
+export default defineComponent({
+  components: {NavBar}
+})
 
-const toggleStatus = () => {
-  if (status.value === "active") {
-    status.value = "pending";
-  } else if (status.value === "pending") {
-    status.value = "inactive";
-  } else {
-    status.value = "active";
-  }
-};
-
-const addTask = () => {
-  if (newTask.value.trim() !== "") {
-    tasks.value.push(newTask.value);
-    newTask.value = "";
-  }
-};
-
-const deleteTask = (index) => {
-  tasks.value.splice(index, 1);
-};
 </script>
 
 <template>
-  <h1>Hello, World!</h1>
-  <p>{{ name }}</p>
-
-  <p v-if="status === 'active'">User is active</p>
-  <p v-else-if="status === 'pending'">User is pending</p>
-  <p v-else>User is inactive</p>
-
-  <br />
-
-  <form @submit.prevent="addTask">
-    <labe for="newtask">Add Task</labe>
-    <input type="text" id="newTask" name="newTask" v-model="newTask"></input>
-    <button type="submit">Submit</button>
-  </form>
-
-  <h3>Tasks:</h3>
-  <ul>
-    <li v-for="(task, index) in tasks" :key="task">{{ task }}</li>
-    <span>
-      {{ task }}
-    </span>
-    <button @click="deleteTask(index)">x</button>
-  </ul>
-
-  <br />
-  <!-- <button v-on:click="toggleStatus">Change Status</button> -->
-  <button @click="toggleStatus">Change Status</button>
+  <NavBar />
 </template>

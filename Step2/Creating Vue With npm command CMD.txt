@@ -5,3 +5,9 @@ cd vueJsCourseNpm
 npm install
 
 npm run dev
+
+================================================================================
+
+Vue Tailwaind:
+
+https://v2.tailwindcss.com/docs/guides/vue-3-vite
